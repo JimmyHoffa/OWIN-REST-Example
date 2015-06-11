@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.ConsoleHost", "Inventory.ConsoleHost\Inventory.ConsoleHost.csproj", "{AF8426AD-0447-431B-8BDB-1A71DD3F01B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Endpoint", "Inventory.Endpoint\Inventory.Endpoint.csproj", "{9C9B84F5-C7BA-4A4D-9AFF-8500D68055EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Contract", "Inventory.Contract\Inventory.Contract.csproj", "{BFFB762A-AB1A-4303-8BB7-017B34CB3628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Persistence.InMemory", "Inventory.Persistence.InMemory\Inventory.Persistence.InMemory.csproj", "{F4AA61BC-8E3D-4C15-81A8-48C6EC7F93E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DFFFF672-EF30-44F5-BDE2-30AA7CC949D3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Service", "Inventory.Service\Inventory.Service.csproj", "{D90D648D-7307-45C6-84AF-56A820F756F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.IISHost", "Inventory.IISHost\Inventory.IISHost.csproj", "{A06A7DCE-2E69-4B03-8E38-3EA3708ABDF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF8426AD-0447-431B-8BDB-1A71DD3F01B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8426AD-0447-431B-8BDB-1A71DD3F01B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8426AD-0447-431B-8BDB-1A71DD3F01B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8426AD-0447-431B-8BDB-1A71DD3F01B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9B84F5-C7BA-4A4D-9AFF-8500D68055EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9B84F5-C7BA-4A4D-9AFF-8500D68055EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9B84F5-C7BA-4A4D-9AFF-8500D68055EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9B84F5-C7BA-4A4D-9AFF-8500D68055EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFFB762A-AB1A-4303-8BB7-017B34CB3628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFB762A-AB1A-4303-8BB7-017B34CB3628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFB762A-AB1A-4303-8BB7-017B34CB3628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFFB762A-AB1A-4303-8BB7-017B34CB3628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AA61BC-8E3D-4C15-81A8-48C6EC7F93E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AA61BC-8E3D-4C15-81A8-48C6EC7F93E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AA61BC-8E3D-4C15-81A8-48C6EC7F93E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AA61BC-8E3D-4C15-81A8-48C6EC7F93E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D90D648D-7307-45C6-84AF-56A820F756F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D90D648D-7307-45C6-84AF-56A820F756F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D90D648D-7307-45C6-84AF-56A820F756F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D90D648D-7307-45C6-84AF-56A820F756F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A06A7DCE-2E69-4B03-8E38-3EA3708ABDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06A7DCE-2E69-4B03-8E38-3EA3708ABDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06A7DCE-2E69-4B03-8E38-3EA3708ABDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06A7DCE-2E69-4B03-8E38-3EA3708ABDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
