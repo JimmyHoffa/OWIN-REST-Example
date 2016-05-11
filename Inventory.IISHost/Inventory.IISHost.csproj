@@ -25,6 +25,7 @@
     <SccProvider>SAK</SccProvider>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -119,24 +120,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Inventory.Contract\Inventory.Contract.csproj">
-      <Project>{bffb762a-ab1a-4303-8bb7-017b34cb3628}</Project>
-      <Name>Inventory.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Inventory.Endpoint\Inventory.Endpoint.csproj">
-      <Project>{9c9b84f5-c7ba-4a4d-9aff-8500d68055ea}</Project>
-      <Name>Inventory.Endpoint</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Inventory.Persistence.InMemory\Inventory.Persistence.InMemory.csproj">
-      <Project>{f4aa61bc-8e3d-4c15-81a8-48c6ec7f93e3}</Project>
-      <Name>Inventory.Persistence.InMemory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Inventory.Service\Inventory.Service.csproj">
-      <Project>{d90d648d-7307-45c6-84af-56a820f756f0}</Project>
-      <Name>Inventory.Service</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -176,6 +159,20 @@
     <AdditionalPublishFile Include="@(MyDocumentationFile->'%(RootDir)%(Directory)\\bin\\*.xml')">
       <Visible>False</Visible>
     </AdditionalPublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.MVC\Infrastructure.MVC.csproj">
+      <Project>{c3fe41dd-e377-4449-bf61-55979ec0116c}</Project>
+      <Name>Infrastructure.MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{10ccddfe-a18c-481e-8717-72043b34ad87}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory\Inventory.csproj">
+      <Project>{f7957f31-588f-45ba-8862-54e2c074c2ac}</Project>
+      <Name>Inventory</Name>
+    </ProjectReference>
   </ItemGroup>
   <Target Name="BeforePublish">
     <Touch Files="@(IntermediateAssembly)" />

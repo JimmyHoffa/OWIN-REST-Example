@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFFB762A-AB1A-4303-8BB7-017B34CB3628}</ProjectGuid>
+    <ProjectGuid>{F7957F31-588F-45BA-8862-54E2C074C2AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Inventory.Contract</RootNamespace>
-    <AssemblyName>Inventory.Contract</AssemblyName>
+    <RootNamespace>Inventory</RootNamespace>
+    <AssemblyName>Inventory</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,17 +36,42 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IInventoryComposer.cs" />
-    <Compile Include="IInventoryService.cs" />
-    <Compile Include="IItemStore.cs" />
-    <Compile Include="ILocationStore.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="ItemBundle.cs" />
-    <Compile Include="Location.cs" />
+    <Compile Include="InventoryApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.MVC\Infrastructure.MVC.csproj">
+      <Project>{c3fe41dd-e377-4449-bf61-55979ec0116c}</Project>
+      <Name>Infrastructure.MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{10ccddfe-a18c-481e-8717-72043b34ad87}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Composer\Inventory.Composer.csproj">
+      <Project>{206e626f-e107-4aa1-800a-a0622b835722}</Project>
+      <Name>Inventory.Composer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Contract\Inventory.Contract.csproj">
+      <Project>{bffb762a-ab1a-4303-8bb7-017b34cb3628}</Project>
+      <Name>Inventory.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Endpoint\Inventory.Endpoint.csproj">
+      <Project>{9c9b84f5-c7ba-4a4d-9aff-8500d68055ea}</Project>
+      <Name>Inventory.Endpoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Persistence.InMemory\Inventory.Persistence.InMemory.csproj">
+      <Project>{f4aa61bc-8e3d-4c15-81a8-48c6ec7f93e3}</Project>
+      <Name>Inventory.Persistence.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Inventory.Service\Inventory.Service.csproj">
+      <Project>{d90d648d-7307-45c6-84af-56a820f756f0}</Project>
+      <Name>Inventory.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

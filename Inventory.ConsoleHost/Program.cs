@@ -1,6 +1,4 @@
-﻿using Inventory.Endpoint;
-using Inventory.Persistence.InMemory;
-using Inventory.Service;
+﻿using Infrastructure.MVC;
 using Microsoft.Owin;
 using Microsoft.Owin.Extensions;
 using Microsoft.Owin.Hosting;
@@ -9,9 +7,9 @@ using System;
 using System.Configuration;
 using System.Web.Http;
 
+[assembly: OwinStartup(typeof(Inventory.ConsoleHost.Program))]
 namespace Inventory.ConsoleHost
 {
-    [assembly: OwinStartup(typeof(Program))]
     class Program
     {
 
@@ -39,18 +37,11 @@ namespace Inventory.ConsoleHost
         }
 
         public void Configuration(IAppBuilder app)
-        {
-            // Typically I'd use constructor injection for this, but in a rush and not interested in hacking any containers into the MVC DependencyResolver
-            // This still pulls the dependencies up to the top layer effectively committing IoC, it's just controllers are constructed by the guts of the MVC and I'm not interested in hooking into the dep resolve right now
-            var itemStore = new InMemoryItemStore();
-            var locationStore = new InMemoryLocationStore();
-            InventoryService.SetIItemStoreConstructor(() => itemStore); // enclose this single instance because it needs to be maintained consistently since it's an in memory store
-            InventoryService.SetILocationStoreConstructor(() => locationStore);
-
-            InventoryController.SetIInventoryServiceConstructor(() => new InventoryService()); // it's dependencies are static already, it does not need to be static
-            InventoryController.SetSimpleMessagePublisher(Console.WriteLine);
-            
+        {   
             var httpConfiguration = new HttpConfiguration();
+            var dependencyContainer = new InventoryApplication().GetApplicationDependencyGraph();
+            dependencyContainer.SetSingleDependencyInstance<Action<string>>(Console.WriteLine);
+            httpConfiguration.DependencyResolver = new DependencyResolver(dependencyContainer);
 
             // Configure Web API Routes:
             // - Enable Attribute Mapping

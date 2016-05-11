@@ -23,7 +23,7 @@ namespace Inventory.Persistence.InMemory
 
         public Location UpsertLocation(Location latestOrNewLocation)
         {
-            _locations.TryAdd(latestOrNewLocation.Id, new Location(latestOrNewLocation.Id, latestOrNewLocation.Name, latestOrNewLocation.ItemBundles.ToArray())); // Force enumerable iteration here at the bounds of the process to avoid passing out a deferred execution object
+            _locations.TryAdd(latestOrNewLocation.Id, new Location(latestOrNewLocation.Id, latestOrNewLocation.Name, latestOrNewLocation.ItemBundles.ToList())); // Force enumerable iteration here at the bounds of the process to avoid passing out a deferred execution object
             return GetLocationById(latestOrNewLocation.Id); // return the latest in case modification or deletion happened between add and here
         }
 
